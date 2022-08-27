@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Inventory_Management_System
 {
-    public partial class Form2 : Form
+    public partial class CustomersPage : Form
     {
-        public Form2()
+        public CustomersPage()
         {
             InitializeComponent();
+        }
+
+        private void CustomersPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
