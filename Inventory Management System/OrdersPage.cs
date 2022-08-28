@@ -16,5 +16,17 @@ namespace Inventory_Management_System
         {
             InitializeComponent();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HomePage od = new HomePage();
+            od.Show();
+            this.Hide();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
