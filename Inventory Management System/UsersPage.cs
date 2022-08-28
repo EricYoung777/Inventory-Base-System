@@ -113,6 +113,7 @@ namespace Inventory_Management_System
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Successfully UpDated");
                 Ucon.Close();
+                
             }
             catch
             {
