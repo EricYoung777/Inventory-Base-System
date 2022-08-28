@@ -57,6 +57,7 @@ namespace Inventory_Management_System
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Successfully Added");
                 Ucon.Close();
+                Populate();
             }
             catch
             {
@@ -81,7 +82,7 @@ namespace Inventory_Management_System
              else
             {
                 Ucon.Open();
-                string myquery = "delete from UserTbl where Uphone='" + phoneTb.Text + "', ";
+                string myquery = "delete from UserTbl where Uphone='" + phoneTb.Text + "' ";
                 SqlCommand cmd = new SqlCommand(myquery, Ucon);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Details Successfully Deleted");
@@ -92,10 +93,13 @@ namespace Inventory_Management_System
 
         private void usersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            usernameTb.Text = usersGV.SelectedRows[0].Cells[0].Value.ToString();
-            fnameTb.Text = usersGV.SelectedRows[0].Cells[1].Value.ToString();
-            phoneTb.Text = usersGV.SelectedRows[0].Cells[2].Value.ToString();
-            passwordTb.Text = usersGV.SelectedRows[0].Cells[3].Value.ToString();
+            DataGridViewRow row = usersGV.Rows[e.RowIndex];
+            usernameTb.Text = row.Cells["Uname"].Value.ToString();
+            fnameTb.Text = row.Cells["Ufullname"].Value.ToString();
+            phoneTb.Text = row.Cells["Uphone"].Value.ToString();
+            passwordTb.Text = row.Cells["Upassword"].Value.ToString();
+
+
         }
 
 
@@ -115,5 +119,7 @@ namespace Inventory_Management_System
 
             }
         }
+
+      
     }
 }
