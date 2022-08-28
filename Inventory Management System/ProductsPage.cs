@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Inventory_Management_System
 {
-    public partial class CustomersPage : Form
+    public partial class ProductsPage : Form
     {
-        public CustomersPage()
+        public ProductsPage()
         {
             InitializeComponent();
         }
@@ -20,6 +20,24 @@ namespace Inventory_Management_System
         private void CustomersPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HomePage hom1 = new HomePage();
+            this.Hide();
+            hom1.Show();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
