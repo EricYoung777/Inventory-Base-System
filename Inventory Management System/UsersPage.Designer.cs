@@ -85,6 +85,7 @@ namespace Inventory_Management_System
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.usersGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.usersGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.usersGV.Size = new System.Drawing.Size(526, 335);
             this.usersGV.TabIndex = 11;
             this.usersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersGV_CellContentClick);
@@ -98,7 +99,6 @@ namespace Inventory_Management_System
             this.fnameTb.Name = "fnameTb";
             this.fnameTb.Size = new System.Drawing.Size(194, 32);
             this.fnameTb.TabIndex = 12;
-          //  this.fnameTb.TextChanged += new System.EventHandler(this.fnameTb_TextChanged);
             // 
             // passwordTb
             // 
@@ -110,7 +110,6 @@ namespace Inventory_Management_System
             this.passwordTb.PasswordChar = '*';
             this.passwordTb.Size = new System.Drawing.Size(194, 28);
             this.passwordTb.TabIndex = 14;
-          //  this.passwordTb.TextChanged += new System.EventHandler(this.passwordTb_TextChanged);
             // 
             // phoneTb
             // 
@@ -121,7 +120,6 @@ namespace Inventory_Management_System
             this.phoneTb.Name = "phoneTb";
             this.phoneTb.Size = new System.Drawing.Size(194, 30);
             this.phoneTb.TabIndex = 15;
-          //  this.phoneTb.TextChanged += new System.EventHandler(this.phoneTb_TextChanged);
             // 
             // usernameTb
             // 
@@ -132,7 +130,6 @@ namespace Inventory_Management_System
             this.usernameTb.Name = "usernameTb";
             this.usernameTb.Size = new System.Drawing.Size(194, 30);
             this.usernameTb.TabIndex = 16;
-          //  this.usernameTb.TextChanged += new System.EventHandler(this.usernameTb_TextChanged);
             // 
             // button1
             // 
