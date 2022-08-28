@@ -28,24 +28,18 @@ namespace Inventory_Management_System
             this.Hide();
         }
 
-        void Populate()
+        void Dense()
         {
-            try
-            {
+           
                 Ucon.Open();
                 string Myquery = "select * from UserTbl";
                 SqlDataAdapter da = new SqlDataAdapter(Myquery, Ucon);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                usersGV.DataSource = ds.Tables[0];
-                Ucon.Close();
-            }
+                var dts = new DataSet();
+                da.Fill(dts);
+                usersGV.DataSource = dts.Tables[0];
+                Ucon.Close();            
 
-            catch
-            {
-               
-            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,7 +51,7 @@ namespace Inventory_Management_System
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("User Successfully Added");
                 Ucon.Close();
-                Populate();
+                Dense();
             }
             catch
             {
@@ -69,7 +63,7 @@ namespace Inventory_Management_System
 
         private void UsersPage_Load(object sender, EventArgs e)
         {
-            Populate();
+            Dense();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,12 +76,12 @@ namespace Inventory_Management_System
              else
             {
                 Ucon.Open();
-                string myquery = "delete from UserTbl where Uphone='" + phoneTb.Text + "' ";
-                SqlCommand cmd = new SqlCommand(myquery, Ucon);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("User Details Successfully Deleted");
+                string myquerY = "delete from UserTbl where Uphone='" + phoneTb.Text + "' ";
+                SqlCommand cmmd = new SqlCommand(myquerY, Ucon);
+                cmmd.ExecuteNonQuery();
+                MessageBox.Show("User Details has been Deleted successfully");
                 Ucon.Close();
-                Populate();
+                Dense();
             }
         }
 
@@ -109,8 +103,8 @@ namespace Inventory_Management_System
             try
             {
                 Ucon.Open();
-                SqlCommand cmd = new SqlCommand("update UserTbl set Uname = '" + usernameTb.Text + "', Ufullname='" + fnameTb.Text + "', Uphone= '" + phoneTb.Text +"', Upassword= '" + passwordTb.Text + "' where Uphone= '" + phoneTb.Text + "' ", Ucon);
-                cmd.ExecuteNonQuery();
+                SqlCommand cd = new SqlCommand("update UserTbl set Uname = '" + usernameTb.Text + "', Ufullname='" + fnameTb.Text + "', Uphone= '" + phoneTb.Text +"', Upassword= '" + passwordTb.Text + "' where Uphone= '" + phoneTb.Text + "' ", Ucon);
+                cd.ExecuteNonQuery();
                 MessageBox.Show("User Successfully UpDated");
                 Ucon.Close();
                 
