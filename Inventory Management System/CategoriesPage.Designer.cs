@@ -32,8 +32,8 @@ namespace Inventory_Management_System
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.CategoriesGV = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.catId = new System.Windows.Forms.TextBox();
+            this.catName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,25 +66,26 @@ namespace Inventory_Management_System
             this.CategoriesGV.Name = "CategoriesGV";
             this.CategoriesGV.Size = new System.Drawing.Size(474, 320);
             this.CategoriesGV.TabIndex = 1;
+            this.CategoriesGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CategoriesGV_CellContentClick);
             // 
-            // textBox1
+            // catId
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 186);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 29);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Category ID";
+            this.catId.Location = new System.Drawing.Point(73, 186);
+            this.catId.Multiline = true;
+            this.catId.Name = "catId";
+            this.catId.Size = new System.Drawing.Size(156, 29);
+            this.catId.TabIndex = 2;
+            this.catId.Text = "Category ID";
             // 
-            // textBox2
+            // catName
             // 
-            this.textBox2.Location = new System.Drawing.Point(73, 243);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 29);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "Category Name";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.catName.Location = new System.Drawing.Point(73, 243);
+            this.catName.Multiline = true;
+            this.catName.Name = "catName";
+            this.catName.Size = new System.Drawing.Size(156, 29);
+            this.catName.TabIndex = 3;
+            this.catName.Text = "Category Name";
+            this.catName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // button1
             // 
@@ -97,6 +98,7 @@ namespace Inventory_Management_System
             this.button1.TabIndex = 21;
             this.button1.Text = "Add \r\nCategory";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -109,6 +111,7 @@ namespace Inventory_Management_System
             this.button2.TabIndex = 22;
             this.button2.Text = "Update \r\nCategory";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -121,6 +124,7 @@ namespace Inventory_Management_System
             this.button3.TabIndex = 23;
             this.button3.Text = "Delete Category";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -170,12 +174,13 @@ namespace Inventory_Management_System
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.catName);
+            this.Controls.Add(this.catId);
             this.Controls.Add(this.CategoriesGV);
             this.Controls.Add(this.label1);
             this.Name = "CategoriesPage";
             this.Text = "CategoriesPage";
+            this.Load += new System.EventHandler(this.CategoriesPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CategoriesGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -188,8 +193,8 @@ namespace Inventory_Management_System
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView CategoriesGV;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox catId;
+        private System.Windows.Forms.TextBox catName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
