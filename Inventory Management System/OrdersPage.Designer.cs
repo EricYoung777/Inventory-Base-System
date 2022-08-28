@@ -29,11 +29,11 @@ namespace Inventory_Management_System
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.id = new System.Windows.Forms.TextBox();
             this.OrdersGV = new System.Windows.Forms.DataGridView();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.date = new System.Windows.Forms.DateTimePicker();
+            this.prodCateg = new System.Windows.Forms.ComboBox();
+            this.orderId = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -44,14 +44,14 @@ namespace Inventory_Management_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox3
+            // id
             // 
-            this.textBox3.Location = new System.Drawing.Point(21, 168);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(202, 28);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "OrderID";
+            this.id.Location = new System.Drawing.Point(21, 168);
+            this.id.Multiline = true;
+            this.id.Name = "id";
+            this.id.Size = new System.Drawing.Size(202, 28);
+            this.id.TabIndex = 2;
+            this.id.Text = "OrderID";
             // 
             // OrdersGV
             // 
@@ -61,37 +61,46 @@ namespace Inventory_Management_System
             this.OrdersGV.Name = "OrdersGV";
             this.OrdersGV.Size = new System.Drawing.Size(449, 303);
             this.OrdersGV.TabIndex = 5;
+            this.OrdersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersGV_CellContentClick);
             // 
-            // dateTimePicker1
+            // date
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(21, 263);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(202, 20);
-            this.dateTimePicker1.TabIndex = 6;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.date.Location = new System.Drawing.Point(21, 263);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(202, 20);
+            this.date.TabIndex = 6;
+            this.date.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // comboBox3
+            // prodCateg
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 13;
-            this.comboBox3.Location = new System.Drawing.Point(21, 216);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(202, 21);
-            this.comboBox3.Sorted = true;
-            this.comboBox3.TabIndex = 19;
-            this.comboBox3.Text = "Product Category";
+            this.prodCateg.FormattingEnabled = true;
+            this.prodCateg.ItemHeight = 13;
+            this.prodCateg.Items.AddRange(new object[] {
+            "Cars",
+            "Clothings",
+            "Electronics",
+            "Food Products",
+            "Footwear",
+            "Wood Works"});
+            this.prodCateg.Location = new System.Drawing.Point(21, 216);
+            this.prodCateg.Name = "prodCateg";
+            this.prodCateg.Size = new System.Drawing.Size(202, 21);
+            this.prodCateg.Sorted = true;
+            this.prodCateg.TabIndex = 19;
+            this.prodCateg.Text = "Product Category";
             // 
-            // button1
+            // orderId
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(4, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(82, 53);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Add \r\nOrder";
-            this.button1.UseVisualStyleBackColor = false;
+            this.orderId.BackColor = System.Drawing.Color.Black;
+            this.orderId.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderId.ForeColor = System.Drawing.Color.White;
+            this.orderId.Location = new System.Drawing.Point(4, 312);
+            this.orderId.Name = "orderId";
+            this.orderId.Size = new System.Drawing.Size(82, 53);
+            this.orderId.TabIndex = 20;
+            this.orderId.Text = "Add \r\nOrder";
+            this.orderId.UseVisualStyleBackColor = false;
+            this.orderId.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -104,6 +113,7 @@ namespace Inventory_Management_System
             this.button2.TabIndex = 21;
             this.button2.Text = "UpDate \r\nOrder";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -116,6 +126,7 @@ namespace Inventory_Management_System
             this.button3.TabIndex = 22;
             this.button3.Text = "Delete \r\nOrder";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -134,7 +145,7 @@ namespace Inventory_Management_System
             // 
             this.label2.BackColor = System.Drawing.Color.Red;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(317, 87);
@@ -176,14 +187,15 @@ namespace Inventory_Management_System
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.orderId);
+            this.Controls.Add(this.prodCateg);
+            this.Controls.Add(this.date);
             this.Controls.Add(this.OrdersGV);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.id);
             this.Name = "OrdersPage";
             this.Text = "OrdersPage";
+            this.Load += new System.EventHandler(this.OrdersPage_Load);
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -192,12 +204,12 @@ namespace Inventory_Management_System
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox id;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView OrdersGV;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.ComboBox prodCateg;
+        private System.Windows.Forms.Button orderId;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
