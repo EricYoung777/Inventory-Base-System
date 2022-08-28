@@ -21,5 +21,12 @@ namespace Inventory_Management_System
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HomePage hom1 = new HomePage();
+            this.Hide();
+            hom1.Show();
+        }
     }
 }
